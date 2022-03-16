@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 pool:
-  name: 'ASPCoreAgent'
+  vmImage: 'windows-2022'
 
 variables:
   buildConfiguration: 'Release'
