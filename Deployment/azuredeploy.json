@@ -23,17 +23,17 @@
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2020-12-01",
-            "name": "aspcoredemo122612",
+            "name": "aspcoredemo12261211",
             "location": "[resourceGroup().location]",
             "tags": {
                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemo122612')]": "Resource",
-                "displayName": "aspcoredemo122612"
+                "displayName": "aspcoredemo12261211"
             },
             "dependsOn": [
                 "Microsoft.Web/serverfarms/aspcoredemo122612"
             ],
             "properties": {
-                "name": "aspcoredemo122612",
+                "name": "aspcoredemo12261211",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoredemo122612')]"
             }
         }
