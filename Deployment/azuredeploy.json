@@ -7,34 +7,34 @@
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2020-12-01",
-            "name": "aspcoreapp122611",
+            "name": "aspcoredemo122612",
             "location": "[resourceGroup().location]",
             "sku": {
                 "name": "F1",
                 "capacity": 1
             },
             "tags": {
-                "displayName": "aspcoreapp122611"
+                "displayName": "aspcoredemo122612"
             },
             "properties": {
-                "name": "aspcoreapp122611"
+                "name": "aspcoredemo122612"
             }
         },
         {
             "type": "Microsoft.Web/sites",
             "apiVersion": "2020-12-01",
-            "name": "aspcoredemo122611",
+            "name": "aspcoredemo122612",
             "location": "[resourceGroup().location]",
             "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoreapp122611')]": "Resource",
-                "displayName": "aspcoredemo122611"
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemo122612')]": "Resource",
+                "displayName": "aspcoredemo122612"
             },
             "dependsOn": [
-                "Microsoft.Web/serverfarms/aspcoreapp122611"
+                "Microsoft.Web/serverfarms/aspcoredemo122612"
             ],
             "properties": {
-                "name": "aspcoredemo122611",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoreapp122611')]"
+                "name": "aspcoredemo122612",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoredemo122612')]"
             }
         }
     ],
