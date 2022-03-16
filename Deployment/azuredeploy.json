@@ -26,7 +26,7 @@
             "name": "aspcoredemo12261211",
             "location": "[resourceGroup().location]",
             "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemo122612')]": "Resource",
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemo12261211')]": "Resource",
                 "displayName": "aspcoredemo12261211"
             },
             "dependsOn": [
