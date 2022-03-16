@@ -24,3 +24,5 @@ C:\Users\muraliy\source\repos\aspcore1\aspcore1\obj\Debug\net6.0\refint\aspcore1
 C:\Users\muraliy\source\repos\aspcore1\aspcore1\obj\Debug\net6.0\aspcore1.pdb
 C:\Users\muraliy\source\repos\aspcore1\aspcore1\obj\Debug\net6.0\aspcore1.genruntimeconfig.cache
 C:\Users\muraliy\source\repos\aspcore1\aspcore1\obj\Debug\net6.0\ref\aspcore1.dll
+C:\Users\muraliy\source\repos\aspcore1\aspcore1\bin\Debug\net6.0\Deployment\azuredeploy.json
+C:\Users\muraliy\source\repos\aspcore1\aspcore1\bin\Debug\net6.0\Deployment\azuredeploy.paramters.json
