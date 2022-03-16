@@ -5,40 +5,36 @@
     "variables": {},
     "resources": [
         {
-            "name": ",",
-            "type": "Microsoft.Web/sites",
+            "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2020-12-01",
+            "name": "aspcoreapp122611",
             "location": "[resourceGroup().location]",
-            "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
-                "displayName": ","
+            "sku": {
+                "name": "F1",
+                "capacity": 1
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
-            ],
+            "tags": {
+                "displayName": "aspcoreapp122611"
+            },
             "properties": {
-                "name": ",",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+                "name": "aspcoreapp122611"
             }
         },
         {
-            "name": "webapp122611/MSDeploy",
-            "type": "Microsoft.Web/sites/extensions",
+            "type": "Microsoft.Web/sites",
             "apiVersion": "2020-12-01",
+            "name": "aspcoredemo4243",
             "location": "[resourceGroup().location]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/sites', 'webapp122611')]"
-            ],
             "tags": {
-                "displayName": "Web Deploy for webapp122611"
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoreapp122611')]": "Resource",
+                "displayName": "aspcoredemo4243"
             },
+            "dependsOn": [
+                "Microsoft.Web/serverfarms/aspcoreapp122611"
+            ],
             "properties": {
-                "packageUri": "[concat('artifactsLocation', '/WebPackages/webapp122611.zip', 'artifactsLocationSasToken')]",
-                "dbType": "None",
-                "connectionString": "",
-                "setParameters": {
-                    "IIS Web Application Name": "webapp122611"
-                }
+                "name": "aspcoredemo4243",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoreapp122611')]"
             }
         }
     ],
