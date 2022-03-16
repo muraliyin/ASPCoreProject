@@ -4,43 +4,39 @@
     "parameters": {},
     "variables": {},
     "resources": [
-         {
-             "name": ",",
-             "type": "Microsoft.Web/sites",
-             "apiVersion": "2020-12-01",
-             "location": "[resourceGroup().location]",
-             "tags": {
-                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
-                 "displayName": ","
-             },
-             "dependsOn": [
-                 "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
-             ],
-             "properties": {
-                 "name": ",",
-                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
-             }
-         },
-         {
-             "name": "aspcore443311/MSDeploy",
-             "type": "Microsoft.Web/sites/extensions",
-             "apiVersion": "2020-12-01",
-             "location": "[resourceGroup().location]",
-             "dependsOn": [
-                 "[resourceId('Microsoft.Web/sites', 'aspcore443311')]"
-             ],
-             "tags": {
-                 "displayName": "Web Deploy for aspcore443311"
-             },
-             "properties": {
-                 "packageUri": "[concat('artifactsLocation', '/WebPackages/aspcore443311.zip', 'artifactsLocationSasToken')]",
-                 "dbType": "None",
-                 "connectionString": "",
-                 "setParameters": {
-                     "IIS Web Application Name": "aspcore443311"
-                 }
-             }
-         }
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2020-12-01",
+            "name": "aspcoredemoplan",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "F1",
+                "capacity": 1
+            },
+            "tags": {
+                "displayName": "aspcoredemoplan"
+            },
+            "properties": {
+                "name": "aspcoredemoplan"
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2020-12-01",
+            "name": "aspcoredemo2612",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemoplan')]": "Resource",
+                "displayName": "aspcoredemo2612"
+            },
+            "dependsOn": [
+                "Microsoft.Web/serverfarms/aspcoredemoplan"
+            ],
+            "properties": {
+                "name": "aspcoredemo2612",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoredemoplan')]"
+            }
+        }
     ],
     "outputs": {}
 }
