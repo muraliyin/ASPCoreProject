@@ -4,39 +4,43 @@
     "parameters": {},
     "variables": {},
     "resources": [
-        {
-            "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2016-09-01",
-            "name": "aspcoredemoplan123",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "F1",
-                "capacity": 1
-            },
-            "tags": {
-                "displayName": "aspcoredemoplan123"
-            },
-            "properties": {
-                "name": "aspcoredemoplan123"
-            }
-        },
-        {
-            "type": "Microsoft.Web/sites",
-            "apiVersion": "2015-08-01",
-            "name": "aspcore443311",
-            "location": "[resourceGroup().location]",
-            "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/aspcoredemoplan123')]": "Resource",
-                "displayName": "aspcore443311"
-            },
-            "dependsOn": [
-                "Microsoft.Web/serverfarms/aspcoredemoplan123"
-            ],
-            "properties": {
-                "name": "aspcore443311",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'aspcoredemoplan123')]"
-            }
-        }
+         {
+             "name": ",",
+             "type": "Microsoft.Web/sites",
+             "apiVersion": "2020-12-01",
+             "location": "[resourceGroup().location]",
+             "tags": {
+                 "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/appServicePlan1')]": "Resource",
+                 "displayName": ","
+             },
+             "dependsOn": [
+                 "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+             ],
+             "properties": {
+                 "name": ",",
+                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]"
+             }
+         },
+         {
+             "name": "aspcore443311/MSDeploy",
+             "type": "Microsoft.Web/sites/extensions",
+             "apiVersion": "2020-12-01",
+             "location": "[resourceGroup().location]",
+             "dependsOn": [
+                 "[resourceId('Microsoft.Web/sites', 'aspcore443311')]"
+             ],
+             "tags": {
+                 "displayName": "Web Deploy for aspcore443311"
+             },
+             "properties": {
+                 "packageUri": "[concat('artifactsLocation', '/WebPackages/aspcore443311.zip', 'artifactsLocationSasToken')]",
+                 "dbType": "None",
+                 "connectionString": "",
+                 "setParameters": {
+                     "IIS Web Application Name": "aspcore443311"
+                 }
+             }
+         }
     ],
     "outputs": {}
 }
